@@ -1,0 +1,218 @@
+.htmlMain {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
+}
+
+.bodyMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  background: #0E141A;
+  min-height: 100vh;
+  word-break: break-word;
+  font-size: 18px;
+  line-height: 28px;
+  font-family: roboto;
+  word-break: break-word;
+  color: #ffffff;
+  position: relative;
+}
+
+.DivCustomContainer {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px 0 10px;
+  position: relative;
+}
+
+.divTop {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.divMid {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /*justify-content: center;*/
+  align-items: center;
+  flex-grow: 1;
+  padding: 50px 0 50px 0;
+}
+
+.divBot {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.divNotesHolder {
+  width: 100%;
+  /*display: grid;*/
+  /*grid-template-columns: 1fr 1fr 1fr;*/
+  grid-gap: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.divNote {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+  border-radius: 20px;
+  box-shadow: 0 0 12px 0 rgb(0,0,0,0.1);
+  background-color: #253443;
+  border: solid 1px #2b3c4e;
+}
+
+.divNoteTop {
+  display: flex;
+  flex-direction: row;
+  grid-gap: 10px;
+  margin: 10px 10px 0 10px;
+}
+
+.divNoteMid {
+  padding: 10px 10px 0 10px;
+  border-top: solid 1px #2b3c4e;
+}
+
+.divNoteBot {
+}
+
+.divNoteMidPara {
+  margin: 0;
+  font-size: 16px;
+}
+
+.divNoteTopPP {
+  width: 75px;
+  height: 75px;
+  overflow: hidden;
+  border-radius: 20px;
+  border: solid 1px #2b3c4e;
+}
+
+.divNoteTopPPImg {
+  width: 100%;
+  height: auto;
+}
+
+.divNoteTopName {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.divNoteTopNamePara {
+  margin: 0;
+  font-size: 16px;
+  color: grey;
+}
+
+.divNoteLink {
+  width: 100%;
+  max-width: 32%;
+  background: #1e2b37;
+  /*border: solid 1px #2b3c4e;*/
+  border-radius: 20px;
+}
+
+@media (max-width: 992px) {
+  .divNoteLink {
+    width: 100%;
+    max-width: 48%;
+    background: #1e2b37;
+    /*border: solid 1px #2b3c4e;*/
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .divNoteLink {
+    width: 100%;
+    max-width: 100%;
+    background: #1e2b37;
+    /*border: solid 1px #2b3c4e;*/
+    border-radius: 20px;
+  }
+}
+
+a {
+  color: unset;
+  text-decoration: unset;
+}
+
+a:hover {
+  color: unset;
+  text-decoration: unset;
+}
+
+.divNoteTopPPLink {
+}
+
+.divNoteTopNameLink {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.divHero {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0 50px 0;
+  border-bottom: solid 1px #232323;
+}
+
+.divHeroContent {
+  width: 100%;
+  /*height: 200px;*/
+  border-radius: 12px;
+  box-shadow: 0 0 12px 0 rgb(0,0,0,0.1);
+  background-color: #253443;
+  border: solid 1px #2b3c4e;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.divHeroContentHeading {
+  margin: 0;
+}
+
+.divHeroContentPara {
+  margin: 10px 0 0 0;
+  color: #bfbfbf;
+  text-align: center;
+}
+
+.divHeroContentPara.dHCPNote {
+  color: rgba(255,255,255,0.25);
+  padding: 10px;
+  border: solid 1px rgba(255,255,255,0.05);
+  border-radius: 12px;
+  background: rgba(0,0,0,0.1);
+}
+
