@@ -80,6 +80,9 @@
   box-shadow: 0 0 12px 0 rgb(0,0,0,0.1);
   background-color: #253443;
   border: solid 1px #2b3c4e;
+  position: relative;
+  flex-grow: 1;
+  justify-content: space-between;
 }
 
 .divNoteTop {
@@ -92,14 +95,22 @@
 .divNoteMid {
   padding: 10px 10px 0 10px;
   border-top: solid 1px #2b3c4e;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
 }
 
 .divNoteBot {
+  z-index: 1;
 }
 
 .divNoteMidPara {
-  margin: 0;
+  margin: 0 0 5px 0;
   font-size: 16px;
+  max-height: 55px;
+  overflow: hidden;
 }
 
 .divNoteTopPP {
@@ -129,10 +140,15 @@
 
 .divNoteLink {
   width: 100%;
-  max-width: 32%;
-  background: #1e2b37;
+  /*background: #1e2b37;*/
   /*border: solid 1px #2b3c4e;*/
   border-radius: 20px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 0;
 }
 
 @media (max-width: 992px) {
@@ -230,7 +246,7 @@ a:hover {
 
 @media (max-width: 768px) {
   .divHeroContentPara {
-    text-align: justify;
+    /*text-align: justify;*/
   }
 }
 
@@ -318,6 +334,10 @@ a:hover {
 @media (max-width: 768px) {
   .divFeedbackSearchPopular {
     border: unset;
+    flex-direction: column;
+    grid-gap: 10px;
+    margin: 0;
+    padding: 0;
   }
 }
 
@@ -330,11 +350,18 @@ a:hover {
   word-break: normal;
 }
 
+@media (max-width: 768px) {
+  .divFeedbackSearchPopularPara {
+    text-align: center;
+  }
+}
+
 .divFeedbackSearchPopularTags {
   flex-grow: 1;
   display: flex;
   flex-direction: row;
   grid-gap: 10px;
+  position: relative;
 }
 
 .divFeedbackSearchPopularTagsLinks {
@@ -348,7 +375,7 @@ a:hover {
 
 .divFeedbackSearchPopularTagsHolder {
   overflow: auto;
-  margin: 0 0 0 10px;
+  position: relative;
 }
 
 .divFeedbackSearchPopularTagsHolder::-webkit-scrollbar {
@@ -360,16 +387,11 @@ a:hover {
 
 .btnMain {
   transition: ease 0.3s;
-  border-radius: 0 16px 16px 0;
   border: solid 1px rgba(255,255,255,0.05);
   color: grey;
   outline: unset;
   padding: 5px 10px 5px 10px;
   background: rgba(0,0,0,0.1);
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
 }
 
 .btnMain:hover {
@@ -379,9 +401,94 @@ a:hover {
   border: solid 1px rgba(255,255,255,0.05);
   padding: 5px 10px 5px 10px;
   background: rgba(0,0,0,0.1);
+}
+
+.btnMain:focus {
+  transition: ease 0.3s;
+  color: white;
+  outline: unset;
+  border: solid 1px rgba(255,255,255,0.05);
+  padding: 5px 10px 5px 10px;
+  background: rgba(0,0,0,0.1);
+}
+
+.divNoteInfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.divNoteInfoBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.divNoteInfoBoxLink {
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  color: rgba(255,255,255,0.5);
+  width: 100%;
+}
+
+.divNoteInfoBoxLinkPara {
+  line-height: 1.3;
+  margin: 0 0 0 8px;
+}
+
+.divNoteInfoBoxLinkIcon {
+}
+
+.divNoteMidPara.divNoteMidParaSpan {
+  margin: 0 0 0 5px;
+  color: grey;
+}
+
+.divFeedbackSearchPopularTagsHolderX2 {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  margin: 0 0 0 10px;
+}
+
+.divGradientSidesTags {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-image: linear-gradient(to right, rgb(37,52,67), rgb(37,52,67), rgba(37,52,67,0));
+  width: 35px;
+}
+
+.divGradientSidesTags.GSTReverse {
+  right: 0;
+  left: unset;
+  background-image: linear-gradient(to left, rgb(37,52,67), rgb(37,52,67), rgba(37,52,67,0));
+}
+
+.btnMain.btnSearch {
   position: absolute;
   right: 0;
   top: 0;
   bottom: 0;
+  border-radius: 0 16px 16px 0;
+}
+
+.btnMain.btnNoteFull:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.btnMain.btnNoteFull {
+}
+
+.divNoteHolder {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 32%;
 }
 

@@ -19,7 +19,7 @@ var relay = "wss://relay.damus.io";
       var obj = {
         nosNPUBName: event.pubkey.substring(0,20)+"...",
     		nosProPic: "https://cdn.nostr.build/i/0ee39010157559115d847ee20e8ede0a64bc38fef7707cda9ed96b9587c0ccea.jpg",
-    		nosContentText: event.content.substring(0,100)+" ...",
+    		nosContentText: event.content,
         publishedOn: convertHMS(now - event.created_at),
       }
       $( '#NosNotesHolder' ).append( createEntry( obj["nosNPUBName"], obj["nosProPic"], obj["nosContentText"], obj["publishedOn"]) );
