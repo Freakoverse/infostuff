@@ -492,3 +492,21 @@ a:hover {
   max-width: 32%;
 }
 
+@media (max-width: 1028px) {
+  .divNoteHolder {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 48%;
+  }
+}
+
+@media (max-width: 768px) {
+  .divNoteHolder {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
