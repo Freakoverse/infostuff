@@ -1,15 +1,16 @@
 var $ = document.querySelector.bind( document );
 var $$ = document.querySelectorAll.bind( document );
 
-var createEntry = ( nosNPUBName, nosProPic, nosContentText) => {
+var createEntry = ( nosNPUBName, nosProPic, nosContentText, publishedOn) => {
 
 var template = `
-	<a id="NosNoteLink" class="divNoteLink" href="#">
-		<div id="NosNote" class="divNote">
+	<a class="divNoteLink" href="#">
+		<div class="divNote">
 			<div class="divNoteTop">
 				<div class="divNoteTopPP"><img id="NosPP" class="divNoteTopPPImg" src="${nosProPic}"></div>
 				<div class="divNoteTopName">
 					<p id="NosNPUB" class="divNoteTopNamePara">${nosNPUBName}</p>
+					<p class="divNoteTopNamePara divNoteTopNameParaDateTime">${publishedOn}</p>
 				</div>
 			</div>
 			<div class="divNoteMid">
@@ -31,6 +32,7 @@ var template = `
 		nosNPUBName: "banan",
 		nosProPic: "banan",
 		nosContentText: "banan",
+		publishedOn: "banan"
 	}];
 	entries.forEach(item => {
 		//$( '#NosNotesHolder' ).append( createEntry( item["nosNPUBName"], item["nosProPic"], item["nosContentText"]) );
