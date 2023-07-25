@@ -48,7 +48,7 @@
   /*justify-content: center;*/
   align-items: center;
   flex-grow: 1;
-  padding: 50px 0 50px 0;
+  padding: 25px 0 50px 0;
 }
 
 .divBot {
@@ -103,8 +103,8 @@
 }
 
 .divNoteTopPP {
-  width: 75px;
-  height: 75px;
+  width: 65px;
+  height: 65px;
   overflow: hidden;
   border-radius: 20px;
   border: solid 1px #2b3c4e;
@@ -180,7 +180,7 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 50px 0 50px 0;
+  padding: 50px 0 25px 0;
   border-bottom: solid 1px #232323;
 }
 
@@ -232,5 +232,126 @@ a:hover {
   .divHeroContentPara {
     text-align: justify;
   }
+}
+
+.divFeedbackSearch {
+  width: 100%;
+  margin: 0 0 20px 0;
+  border-radius: 20px;
+  box-shadow: 0 0 12px 0 rgb(0,0,0,0.1);
+  background-color: #253443;
+  border: solid 1px #2b3c4e;
+  padding: 20px 10px 10px 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .divFeedbackSearch {
+    width: 100%;
+    margin: 0 0 20px 0;
+    border-radius: 20px;
+    box-shadow: 0 0 12px 0 rgb(0,0,0,0.1);
+    background-color: #253443;
+    border: solid 1px #2b3c4e;
+    padding: 20px 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: unset;
+  }
+}
+
+.divFeedbackSearchFieldBox {
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .divFeedbackSearchFieldBox {
+    position: relative;
+    margin: 0 0 10px 0;
+  }
+}
+
+.divFeedbackSearchFieldBoxInput {
+  background: unset;
+  border: solid 1px rgba(255,255,255,0.05);
+  outline: unset;
+  border-radius: 16px;
+  background-color: rgba(0,0,0,0.1);
+  color: white;
+  padding: 5px 10px 5px 10px;
+}
+
+@media (max-width: 768px) {
+  .divFeedbackSearchFieldBoxInput {
+    width: 100%;
+  }
+}
+
+.divFeedbackSearchFieldBoxPara {
+  margin: 0;
+  font-size: 12px;
+  color: grey;
+  line-height: 1.5;
+  padding: 0 10px 0 10px;
+  background-color: #253443;
+  z-index: 2;
+  position: absolute;
+  top: -12px;
+  left: 15px;
+  border-radius: 5px;
+}
+
+.divFeedbackSearchPopular {
+  margin: 0 0 0 10px;
+  padding: 0 0 0 10px;
+  height: 100%;
+  /*width: 100%;*/
+  border-left: solid 1px rgba(255,255,255,0.05);
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .divFeedbackSearchPopular {
+    border: unset;
+  }
+}
+
+.divFeedbackSearchPopularPara {
+  margin: 0;
+  color: rgba(255,255,255,0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  word-break: normal;
+}
+
+.divFeedbackSearchPopularTags {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  grid-gap: 10px;
+}
+
+.divFeedbackSearchPopularTagsLinks {
+  background: rgba(255,255,255,0.05);
+  padding: 5px 10px 5px 10px;
+  border-radius: 12px;
+  color: grey;
+  word-wrap: normal;
+  word-break: normal;
+}
+
+.divFeedbackSearchPopularTagsHolder {
+  overflow: auto;
+  margin: 0 0 0 10px;
+}
+
+.divFeedbackSearchPopularTagsHolder::-webkit-scrollbar {
+  display: none;
 }
 
