@@ -17,12 +17,16 @@ var relay = "wss://relay.damus.io";
       var now = Math.floor(Date.now()/1000);
       //event = JSON.parse(content);
       var obj = {
-        nosNPUBName: event.pubkey.substring(0,20)+"...",
+            nosNPUBName: event.pubkey.substring(0,20)+"...",
     		nosProPic: "https://cdn.nostr.build/i/0ee39010157559115d847ee20e8ede0a64bc38fef7707cda9ed96b9587c0ccea.jpg",
     		nosContentText: event.content,
-        publishedOn: convertHMS(now - event.created_at),
+            publishedOn: convertHMS(now - event.created_at),
+            repliesCountNumber: "0",
+            repostsCountNumber: "0",
+            reactionsCountNumber: "0",
+            zapsCountNumber: "0",
       }
-      $( '#NosNotesHolder' ).append( createEntry( obj["nosNPUBName"], obj["nosProPic"], obj["nosContentText"], obj["publishedOn"]) );
+      $( '#NosNotesHolder' ).append( createEntry( obj["nosNPUBName"], obj["nosProPic"], obj["nosContentText"], obj["publishedOn"], obj["repliesCountNumber"], obj["repostsCountNumber"], obj["reactionsCountNumber"], obj["zapsCountNumber"]) );
     }
   })
 
