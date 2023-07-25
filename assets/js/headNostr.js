@@ -1,6 +1,10 @@
-var relay = "wss://relay.damus.io";
+var relay = "wss://nostrue.com";
   var socket = new WebSocket( relay );
 
+    var url_params = new URLSearchParams(window.location.search);
+    var url_keys = url_params.keys();
+    var $_GET = {}
+    for (var key of url_keys) $_GET[key] = url_params.get(key);
 
   socket.addEventListener('message', async function( message ) {
     console.log("Received message data:", message.data);
@@ -26,7 +30,7 @@ var relay = "wss://relay.damus.io";
             reactionsCountNumber: "0",
             zapsCountNumber: "0",
       }
-      $( '#NosNotesHolder' ).append( createEntry( obj["nosNPUBName"], obj["nosProPic"], obj["nosContentText"], obj["publishedOn"], obj["repliesCountNumber"], obj["repostsCountNumber"], obj["reactionsCountNumber"], obj["zapsCountNumber"]) );
+      $( '#NosNotesHolder' ).append( createEntry( obj["nosNPUBName"], obj["nosProPic"], obj["nosContentText"], obj["publishedOn"], obj["repliesCountNumber"], obj["repostsCountNumber"], obj["reactionsCountNumber"], obj["zapsCountNumber"], event.id));
     }
   })
 
@@ -34,9 +38,14 @@ var relay = "wss://relay.damus.io";
     console.log( "connected to " + relay )
 
     var subId   = bitcoinjs.ECPair.makeRandom().privateKey.toString( "hex" ).substring(0,16)
-    var filter  = { "kinds": [ 1 ], "limit": 20 }
+    if (!$_GET["post"]){
+        var filter = { "kinds": [ 1 ], "limit": 10 }
+        }
+      else {
+            var filter = {"ids": [$_GET["post"]]}
+    }
     var subscription = [ "REQ", subId, filter ]
-    console.log('Subscription:', subscription)
+    //console.log('Subscription:', subscription)
 
     socket.send(JSON.stringify( subscription ));
 

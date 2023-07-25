@@ -1,7 +1,12 @@
 var $ = document.querySelector.bind( document );
 var $$ = document.querySelectorAll.bind( document );
 
-var createEntry = ( nosNPUBName, nosProPic, nosContentText, publishedOn, repliesCountNumber, repostsCountNumber, reactionsCountNumber, zapsCountNumber) => {
+var createEntry = ( nosNPUBName, nosProPic, nosContentText, publishedOn, repliesCountNumber, repostsCountNumber, reactionsCountNumber, zapsCountNumber, postID) => {
+    console.log("post id:", postID);
+    var noteURL = window.location.href;
+    noteURL = noteURL.substring(0, noteURL.indexOf("?"));
+    if (noteURL.endsWith("#")) noteURL=noteURL.substring(0, noteURL.length - 1);
+    noteURL += "?post=" + postID;
 
 var template = `
 	<div class="divNoteHolder">
@@ -16,7 +21,7 @@ var template = `
 			</div>
 			<div class="divNoteMid">
 				<p id="NosContent" class="divNoteMidPara">${nosContentText}</p>
-                <a class="btn btnMain btnNoteFull" type="button">Full View</a>
+                <a class="btn btnMain btnNoteFull" type="button" href="${noteURL}">View Note</a>
 			</div>
 			<div class="divNoteBot">
 <div class="divNoteInfo">
